@@ -1,0 +1,15 @@
+- Why do you think the fib function you have defined takes so long?
+
+The regular fib function that I made takes a very long time to process fib 33 onwards because of the multiple lots of stack calls. It will have stack calls until it reaches 0 and 1, which is a real problem since Haskell is using lazy evaluation. And in this case, because of Haskell's laziness, the fib function takes so long.
+
+- Describe the values in the things list. [Hint: compare with the previous questions.]
+
+The values in the things list are the infinite fibonacci sequence, it is the same as fibs function.
+
+- Describe how the values in things are calculated, using what you know about lazy evaluation.
+
+The values in things are calculated every time from the two previous values, so each time, it creates a new list by evaluating the next one using the two values from before. Using the initial "0:1: " as a base case, for initial evaluation. 
+
+- Why is this calculation so much faster than calculating the values in the list fibs?
+
+This calculation is much faster because it uses previous values. The fibs using fib function that I made, and Haskell's lazy evaluation evaluates slowly. However, using the zipWith function, it keeps evaluating the next value by addition. So, the evaluating process keeps going; therefore,  Haskell works better and faster in this way.
